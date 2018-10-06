@@ -1,17 +1,19 @@
 <h3>Welcome to PizzaShop</h3>
-
+<br>
 <div class="row">
 
 	<% @products.each do |p| %>
-		<div class="col-md-3">
-			<%= p.title %>
-			<%= p.description %>
-			<%= p.price %>
-			<%= p.size%>
-			<%= p.is_spicy %>
-			<%= p.is_veg %>
-			<%= p.is_best_offer %>
-			<%= p.path_to_image %>
+		<div class="col-md-4">
+			<div class="card" style="width: 18rem;">
+			  	<img class="card-img-top" src="<%= p.path_to_image %>" alt="Card image cap" width="300" height="300">
+			  	<div class="card-body">
+				    <h4 class="card-title"><%= p.title %></h4>
+				    <p class="card-text"><%= p.description %></p>
+				    <p class="card-text">Size: <%= p.size%> sm</p>
+				    <p class="card-text">Price: <%= p.price %> $</p>
+				    <a href="#" class="btn btn-primary">Offer</a>
+  				</div>
+			</div>
 		</div>
 	<% end %>
 
