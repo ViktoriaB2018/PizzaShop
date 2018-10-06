@@ -1,9 +1,14 @@
 <h3>Welcome to PizzaShop</h3>
+
+<% @products.each do |p| %>
+	<p>product</p>
+<% end %>
+
 <button class="btn btn-primary" onclick="something()">Click me</button>
 
 <div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col col-lg-2">
+  <div class="row">
+    <div class="col-md-3">
       <div class="card" style="width: 18rem;">
   <img class="card-img-top" src=".../100px180/" alt="Card image cap">
   <div class="card-body">
@@ -13,7 +18,7 @@
   </div>
 </div>
     </div>
-    <div class="col col-lg-2">
+    <div class="col-md-3">
       <div class="card" style="width: 18rem;">
   <img class="card-img-top" src=".../100px180/" alt="Card image cap">
   <div class="card-body">
@@ -23,7 +28,7 @@
   </div>
 </div>
     </div>
-    <div class="col col-lg-2">
+    <div class="col-md-3">
       <div class="card" style="width: 18rem;">
   <img class="card-img-top" src=".../100px180/" alt="Card image cap">
   <div class="card-body">
