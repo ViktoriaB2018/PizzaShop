@@ -11,7 +11,7 @@
 				    <p class="card-text"><%= p.description %></p>
 				    <p class="card-text">Size: <%= p.size%> cm</p>
 				    <p class="card-text">Price: <%= p.price %> $</p>
-				    <a href="#" class="btn btn-primary">Offer</a>
+				    <button class="btn btn-sm btn-info" onclick="add_to_cart(<%= p.id %>)">Add to cart</button>
   				</div>
 			</div>
 		</div>
