@@ -5,11 +5,11 @@
 	<% @products.each do |p| %>
 		<div class="col-md-4">
 			<div class="card" style="width: 18rem;">
-			  	<img class="card-img-top" src="<%= p.path_to_image %>" alt="Card image cap" width="300" height="300">
+			  	<img class="card-img-top" src="<%= p.path_to_image %>" alt="Card image cap" width="200" height="150">
 			  	<div class="card-body">
 				    <h4 class="card-title"><%= p.title %></h4>
 				    <p class="card-text"><%= p.description %></p>
-				    <p class="card-text">Size: <%= p.size%> sm</p>
+				    <p class="card-text">Size: <%= p.size%> cm</p>
 				    <p class="card-text">Price: <%= p.price %> $</p>
 				    <a href="#" class="btn btn-primary">Offer</a>
   				</div>
@@ -19,8 +19,8 @@
 
  </div>
 
-
-
-
+<br>
+<br>
+<br>
 <button class="btn btn-primary" onclick="something()">Click me</button>
 
