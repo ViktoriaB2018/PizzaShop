@@ -17,6 +17,8 @@ end
 get '/about' do
 	erb :about			
 end
+
 post '/cart' do
-	erb 'Hello!'
+	@p = Product.order('created_at DESC')
+	erb :cart
 end

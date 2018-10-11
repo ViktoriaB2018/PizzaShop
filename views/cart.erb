@@ -1,0 +1,23 @@
+<h3 class="display-4">Cart</h3>
+
+<% @p.each do |prod| %>
+	
+				   <h4 class="card-title"><%= prod.title %></h4>
+				   <p class="card-text">Size: <%= prod.size%> cm</p>
+				   <p class="card-text">Price: <%= prod.price %> $</p>
+				   <button class="btn btn-sm btn-info" onclick="">Order</button>
+				   
+<% end %>
+
+
+
+<script type="text/javascript">
+
+$(function() {
+
+  update_orders_input();
+  update_orders_button();
+
+});
+
+</script>
