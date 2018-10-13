@@ -1,5 +1,27 @@
 <h3 class="display-4">Your cart</h3>
 
-<%= @items.inspect %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Qty</th>
+      <th scope="col">Price</th>
+      <th scope="col">Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+  	
+	<% @items.each do |item| %>
+
+	    <tr>
+	      <td><%= item[0].title %></td>
+	      <td><%= item[1] %></td>
+	      <td><%= item[0].price %></td>
+	      <td><%= item[0].price * item[1].to_i %></td>
+	    </tr>
+	<% end %>
+
+  </tbody>
+</table>
 	
 
