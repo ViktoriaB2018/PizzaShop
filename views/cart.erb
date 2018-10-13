@@ -1,11 +1,5 @@
-<h3 class="display-4">Cart</h3>
+<h3 class="display-4">Your cart</h3>
 
-<% @p.each do |prod| %>
+<%= @items.inspect %>
 	
-				   <h4 class="card-title"><%= prod.title %></h4>
-				   <p class="card-text">Size: <%= prod.size%> cm</p>
-				   <p class="card-text">Price: <%= prod.price %> $</p>
-				   <button class="btn btn-sm btn-info" onclick="">Order</button>
-				   
-<% end %>
 

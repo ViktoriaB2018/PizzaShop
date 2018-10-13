@@ -20,8 +20,13 @@ end
 
 post '/cart' do
 	orders_input = params[:order]
-	@orders = parse_orders_input orders_input
-	erb "Hello, #{@orders.inspect}"
+	@items = parse_orders_input orders_input
+
+	@items.each do |item|
+		item[0] = Product.find(item[0])
+	end
+
+	erb :cart
 end
 
 def parse_orders_input orders_input
