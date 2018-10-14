@@ -10,6 +10,10 @@ class Product < ActiveRecord::Base
 end
 
 class Order < ActiveRecord::Base
+	validates :orders_input, presence: true
+	validates :name, presence: true
+	validates :phone, presence: true
+	validates :address, presence: true
 end
 
 get '/' do
@@ -51,12 +55,16 @@ post '/cart' do
 	erb :cart
 end
 
+get '/place_order' do
+	erb :place_order			
+end
+
 post '/place_order' do
-	@po = Order.new params[:order]
-	if @po.save
+	@order = Order.new params[:order]
+	if @order.save
 		erb "<h4>Thank you for your order!</h4>"
 	else
-		@error = @c.errors.full_messages.first
+		@error = @order.errors.full_messages.first
 		erb :place_order
 	end
 end
