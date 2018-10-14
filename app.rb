@@ -45,7 +45,7 @@ def parse_orders_input orders_input
 end
 
 post '/cart' do
-	@orders_input = params[:order]
+	@orders_input = params[:orders_input]
 	@items = parse_orders_input @orders_input
 
 	@items.each do |item|
