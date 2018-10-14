@@ -21,17 +21,6 @@ get '/about' do
 	erb :about			
 end
 
-post '/cart' do
-	@orders_input = params[:order]
-	@items = parse_orders_input @orders_input
-
-	@items.each do |item|
-		item[0] = Product.find(item[0])
-	end
-
-	erb :cart
-end
-
 def parse_orders_input orders_input
 	s1 = orders_input.split(/,/)
 
@@ -49,4 +38,25 @@ def parse_orders_input orders_input
 	end
 
 	return arr
+end
+
+post '/cart' do
+	@orders_input = params[:order]
+	@items = parse_orders_input @orders_input
+
+	@items.each do |item|
+		item[0] = Product.find(item[0])
+	end
+
+	erb :cart
+end
+
+post '/place_order' do
+	@po = Order.new params[:order]
+	if @po.save
+		erb "<h4>Thank you for your order!</h4>"
+	else
+		@error = @c.errors.full_messages.first
+		erb :place_order
+	end
 end
