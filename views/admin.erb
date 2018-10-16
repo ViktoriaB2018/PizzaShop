@@ -1,0 +1,10 @@
+<h3 class="display-4">All orders</h3>
+
+<% @orders.each do |order| %>
+	<p>Order: <%= order.orders_input %></p>
+	<p>Client name: <%= order.name %></p>
+	<p>Phone: <%= order.phone %></p>
+	<p>Address: <%= order.address %></p>
+	<p>Date and time: <%= order.created_at %></p>
+	<br>
+<% end %>
